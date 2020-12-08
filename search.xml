@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>使用YoloV4训练Refuge数据集</title>
+      <link href="2020/11/26/%E4%BD%BF%E7%94%A8YoloV4%E8%AE%AD%E7%BB%83Refuge%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
+      <url>2020/11/26/%E4%BD%BF%E7%94%A8YoloV4%E8%AE%AD%E7%BB%83Refuge%E6%95%B0%E6%8D%AE%E9%9B%86/</url>
+      
+        <content type="html"><![CDATA[<h1 id="使用YoloV4训练Refuge数据集"><a href="#使用YoloV4训练Refuge数据集" class="headerlink" title="使用YoloV4训练Refuge数据集"></a>使用YoloV4训练Refuge数据集</h1><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>为了获得青光眼眼底图的视杯盘区域的裁切图，考虑使用yolov4模型进行训练。</p><h2 id="实验要求"><a href="#实验要求" class="headerlink" title="实验要求"></a>实验要求</h2><ul><li>数据集：glaucoma\refuge_scale608（图片统一处理为608 * 608 size）<ul><li>Annotation-Training400（分割图的训练集400）<ul><li>Glaucoma（分割图的阳性样本40）</li><li>Non-Glaucoma（分割图的阴性样本360）</li></ul></li><li>REFUGE-Training400（眼底图原图的训练集400）<ul><li>Glaucoma（原图的阳性样本40）</li><li>Non-Glaucoma（原图的阴性样本360）</li></ul></li><li>REFUGE-Validation400（眼底图原图的验证集400）</li><li>REFUGE-Validation400_rename（同上，不过将图片的名称中的’V’去掉，因为训练过程要求将验证集图片名转为int型）</li><li>REFUGE-Validation400-GT（分割图的验证集400）</li></ul></li><li>代码：<a href="https://github.com/Tianxiaomo/pytorch-YOLOv4">Tianxiaomo</a></li><li>框架：Pytorch</li><li>平台：星光超算</li></ul><h2 id="实验流程"><a href="#实验流程" class="headerlink" title="实验流程"></a>实验流程</h2><h3 id="生成608数据集"><a href="#生成608数据集" class="headerlink" title="生成608数据集"></a>生成608数据集</h3><ul><li>代码</li></ul><h3 id="制作train-txt-amp-val-txt-amp-disc-cup-names-这里仍然命名为coco-names"><a href="#制作train-txt-amp-val-txt-amp-disc-cup-names-这里仍然命名为coco-names" class="headerlink" title="制作train.txt &amp; val.txt &amp; disc_cup.names(这里仍然命名为coco.names)"></a>制作train.txt &amp; val.txt &amp; disc_cup.names(这里仍然命名为coco.names)</h3><ul><li><p>格式</p></li><li><p>图片路径获取</p></li><li><p>通过分割图获得坐标</p></li><li><p>id划分</p></li><li><p>完整代码和演示</p></li></ul><h3 id="模型代码调试修改"><a href="#模型代码调试修改" class="headerlink" title="模型代码调试修改"></a>模型代码调试修改</h3><ul><li>遇到的bug</li></ul><h3 id="开始训练"><a href="#开始训练" class="headerlink" title="开始训练"></a>开始训练</h3><ul><li>。。。</li><li>训练可视化</li></ul><h3 id="模型验证"><a href="#模型验证" class="headerlink" title="模型验证"></a>模型验证</h3><ul><li>随便抽一张图进行验证</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+            <tag> Pytorch </tag>
+            
+            <tag> DeepLearning </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>关于在星光超算上使用tensorboard可视化训练过程</title>
       <link href="2020/11/26/%E5%85%B3%E4%BA%8E%E5%9C%A8%E6%98%9F%E5%85%89%E8%B6%85%E7%AE%97%E4%B8%8A%E4%BD%BF%E7%94%A8tensorboard%E5%8F%AF%E8%A7%86%E5%8C%96%E8%AE%AD%E7%BB%83%E8%BF%87%E7%A8%8B/"/>
       <url>2020/11/26/%E5%85%B3%E4%BA%8E%E5%9C%A8%E6%98%9F%E5%85%89%E8%B6%85%E7%AE%97%E4%B8%8A%E4%BD%BF%E7%94%A8tensorboard%E5%8F%AF%E8%A7%86%E5%8C%96%E8%AE%AD%E7%BB%83%E8%BF%87%E7%A8%8B/</url>
@@ -31,35 +60,6 @@
     
     
     <entry>
-      <title>使用YoloV4训练Refuge数据集</title>
-      <link href="2020/11/26/%E4%BD%BF%E7%94%A8YoloV4%E8%AE%AD%E7%BB%83Refuge%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
-      <url>2020/11/26/%E4%BD%BF%E7%94%A8YoloV4%E8%AE%AD%E7%BB%83Refuge%E6%95%B0%E6%8D%AE%E9%9B%86/</url>
-      
-        <content type="html"><![CDATA[<h1 id="使用YoloV4训练Refuge数据集"><a href="#使用YoloV4训练Refuge数据集" class="headerlink" title="使用YoloV4训练Refuge数据集"></a>使用YoloV4训练Refuge数据集</h1><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>为了获得青光眼眼底图的视杯盘区域的裁切图，考虑使用yolov4模型进行训练。</p><h2 id="实验要求"><a href="#实验要求" class="headerlink" title="实验要求"></a>实验要求</h2><ul><li>数据集：glaucoma\refuge_scale608（图片统一处理为608 * 608 size）<ul><li>Annotation-Training400（分割图的训练集400）<ul><li>Glaucoma（分割图的阳性样本40）</li><li>Non-Glaucoma（分割图的阴性样本360）</li></ul></li><li>REFUGE-Training400（眼底图原图的训练集400）<ul><li>Glaucoma（原图的阳性样本40）</li><li>Non-Glaucoma（原图的阴性样本360）</li></ul></li><li>REFUGE-Validation400（眼底图原图的验证集400）</li><li>REFUGE-Validation400_rename（同上，不过将图片的名称中的’V’去掉，因为训练过程要求将验证集图片名转为int型）</li><li>REFUGE-Validation400-GT（分割图的验证集400）</li></ul></li><li>代码：<a href="https://github.com/Tianxiaomo/pytorch-YOLOv4">Tianxiaomo</a></li><li>框架：Pytorch</li><li>平台：星光超算</li></ul><h2 id="实验流程"><a href="#实验流程" class="headerlink" title="实验流程"></a>实验流程</h2><h3 id="生成608数据集"><a href="#生成608数据集" class="headerlink" title="生成608数据集"></a>生成608数据集</h3><ul><li>代码</li></ul><h3 id="制作train-txt-amp-val-txt-amp-disc-cup-names-这里仍然命名为coco-names"><a href="#制作train-txt-amp-val-txt-amp-disc-cup-names-这里仍然命名为coco-names" class="headerlink" title="制作train.txt &amp; val.txt &amp; disc_cup.names(这里仍然命名为coco.names)"></a>制作train.txt &amp; val.txt &amp; disc_cup.names(这里仍然命名为coco.names)</h3><ul><li><p>格式</p></li><li><p>图片路径获取</p></li><li><p>通过分割图获得坐标</p></li><li><p>id划分</p></li><li><p>完整代码和演示</p></li></ul><h3 id="模型代码调试修改"><a href="#模型代码调试修改" class="headerlink" title="模型代码调试修改"></a>模型代码调试修改</h3><ul><li>遇到的bug</li></ul><h3 id="开始训练"><a href="#开始训练" class="headerlink" title="开始训练"></a>开始训练</h3><ul><li>。。。</li><li>训练可视化</li></ul><h3 id="模型验证"><a href="#模型验证" class="headerlink" title="模型验证"></a>模型验证</h3><ul><li>随便抽一张图进行验证</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 学习 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> DeepLearning </tag>
-            
-            <tag> Python </tag>
-            
-            <tag> Pytorch </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Pytorch实现LeNet的Mnist手写数字识别</title>
       <link href="2020/10/31/Pytorch%E5%AE%9E%E7%8E%B0LeNet%E7%9A%84Mnist%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB/"/>
       <url>2020/10/31/Pytorch%E5%AE%9E%E7%8E%B0LeNet%E7%9A%84Mnist%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB/</url>
@@ -76,11 +76,11 @@
       
         <tags>
             
-            <tag> DeepLearning </tag>
-            
             <tag> Python </tag>
             
             <tag> Pytorch </tag>
+            
+            <tag> DeepLearning </tag>
             
         </tags>
       
