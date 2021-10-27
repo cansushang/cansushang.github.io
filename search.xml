@@ -4,6 +4,62 @@
   
     
     <entry>
+      <title>Java后端开发核心面试笔记</title>
+      <link href="2021/10/27/Java%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E6%A0%B8%E5%BF%83%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0/"/>
+      <url>2021/10/27/Java%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E6%A0%B8%E5%BF%83%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<h2 id="重写要遵循“两同两小一大”"><a href="#重写要遵循“两同两小一大”" class="headerlink" title="重写要遵循“两同两小一大”"></a>重写要遵循“两同两小一大”</h2><ul><li>方法名，形参列表相同；</li><li>返回类型，声明抛出异常比父类小或相同；</li><li>子类访问方法的的访问权限比父类更大或相同</li><li>重载必须修改参数列表</li></ul><h2 id="类变量，成员变量和局部变量的存放空间"><a href="#类变量，成员变量和局部变量的存放空间" class="headerlink" title="类变量，成员变量和局部变量的存放空间"></a>类变量，成员变量和局部变量的存放空间</h2><ul><li>类变量是指<code>static</code>修饰的类里所包含的变量，不管是基本数据类型还是引用类型都是存放在堆；</li><li>成员变量是指非static修饰的的类里所包含的变量，不管是基本数据类型还是引用类型都是存放在堆；</li><li>局部变量是指类里的方法里所包含的变量，若是基本数据类型，则存放在栈；若是引用类型，则该变量的值是引用地址，存放在栈，而所引用的对象存放在堆</li></ul><h2 id="构造方法的调用"><a href="#构造方法的调用" class="headerlink" title="构造方法的调用"></a>构造方法的调用</h2><ul><li>在调用子类构造方法之前会先调用父类的无参构造方法，若父类没有无参构造方法，则编译报错</li></ul><h2 id="Throwable，throw，throws"><a href="#Throwable，throw，throws" class="headerlink" title="Throwable，throw，throws"></a>Throwable，throw，throws</h2><ul><li><code>Throwable</code>是<code>Exception</code>（异常）和<code>Error</code>（错误）的父类</li><li><code>throws</code>的作用是在方法声明的后面指明该方法可能会抛出异常（并不一定真的会出现异常）。如果在执行这个方法时出现异常，那么这个方法就不再执行了，而是抛出一个异常，把这个异常抛给调用他的方法，并且让调用他的那个方法去处理。</li><li>与<code>throws</code>不同，<code>throw</code>是一定会抛出一个异常，而且是在方法体内部使用。</li></ul><h2 id="try-catch-语句中有return-的各类情况"><a href="#try-catch-语句中有return-的各类情况" class="headerlink" title="try catch 语句中有return 的各类情况"></a>try catch 语句中有return 的各类情况</h2><ul><li>在正常情况（即程序正常执行<code>try catch finally</code>语句块，不会在语句中出现退出程序、线程终止等特殊情况）下，都会执行<code>finally</code>语句块；</li><li>如果<code>finally</code>中有<code>return</code>,则程序会走<code>finally</code>中的<code>return</code>；如果没有，则先执行<code>try</code>或者<code>catch</code>中的<code>return</code>,将其存入临时栈中，执行完<code>finally</code>语句后才返回临时栈中的值。</li></ul><h2 id="transient-关键字"><a href="#transient-关键字" class="headerlink" title="transient 关键字"></a>transient 关键字</h2><ul><li>阻⽌实例中那些⽤此关键字修饰的的变量序列化;</li><li>当对象被反序列化时,被 <code>transient</code> 修饰的变量值不会被持久化和恢复；</li><li><code>transient</code> 只能修饰变量，不能修饰类和方法。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> 后端开发 </tag>
+            
+            <tag> 面试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>SpringCloudAlibaba微服务分布式架构BUG合集</title>
+      <link href="2021/10/27/SpringCloudAlibaba%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%88%86%E5%B8%83%E5%BC%8F%E6%9E%B6%E6%9E%84BUG%E5%90%88%E9%9B%86/"/>
+      <url>2021/10/27/SpringCloudAlibaba%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%88%86%E5%B8%83%E5%BC%8F%E6%9E%B6%E6%9E%84BUG%E5%90%88%E9%9B%86/</url>
+      
+        <content type="html"><![CDATA[<h2 id="利用maven-site创建父工程会在后续配置出现错误"><a href="#利用maven-site创建父工程会在后续配置出现错误" class="headerlink" title="利用maven-site创建父工程会在后续配置出现错误"></a>利用<code>maven-site</code>创建父工程会在后续配置出现错误</h2><p>删除<code>.idea</code>文件，重新启动项目。</p><h2 id="P9-RestController注解不能识别"><a href="#P9-RestController注解不能识别" class="headerlink" title="P9@RestController注解不能识别"></a>P9<code>@RestController</code>注解不能识别</h2><p>因为所需要的包未能导入成功，在<code>maven</code>配置文件<code>setting.xml</code>中不使用阿里云镜像，切换为官方镜像，删除对应包所在仓库，重新刷新<code>maven</code>下载对应的依赖包。</p><h2 id="P14工程重构后测试出现artifact-not-found-com-atguigu-springcloud-cloud2020-1-0-SNAPSHOT"><a href="#P14工程重构后测试出现artifact-not-found-com-atguigu-springcloud-cloud2020-1-0-SNAPSHOT" class="headerlink" title="P14工程重构后测试出现artifact not found com.atguigu.springcloud...cloud2020:1.0-SNAPSHOT"></a>P14工程重构后测试出现<code>artifact not found com.atguigu.springcloud...cloud2020:1.0-SNAPSHOT</code></h2><p>看之前操作的<code>maven install</code>操作的日志，注意各种警告提示，在父工程<code>pom</code>文件下的<code>spring-boot-maven-plugin</code>加上版本号<code>&lt;version&gt;2.2.6.RELEASE&lt;/version&gt;</code>，同时最好<code>maven install</code>父项目，而不是像视频那样只是<code>maven install cloud-api-commons</code>，总之，<code>not found xxx = install xxx</code>。</p><h2 id="P30测试zookeeper功能时在日志上发现maven依赖的slf4j出现版本冲突"><a href="#P30测试zookeeper功能时在日志上发现maven依赖的slf4j出现版本冲突" class="headerlink" title="P30测试zookeeper功能时在日志上发现maven依赖的slf4j出现版本冲突"></a>P30测试zookeeper功能时在日志上发现maven依赖的slf4j出现版本冲突</h2><p>原因是在之前<code>pom</code>文件中重新引入与<code>linux</code>对应版本的<code>zookeeper</code>包后，该包也包含了<code>slf4j</code>，而早在教程一开始就已经导入了一个<code>slf4j</code>，故造成版本冲突。</p><p>解决办法：在对应的<code>cloud-consumerzk-order80</code>和<code>cloud-provider-payment8004</code>模块的两个<code>pom</code>文件中引入<code>exclusion</code>标签：</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--添加zookeeper3.4.9版本--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.zookeeper<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>zookeeper<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.4.9<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--重新添加的这个zookeeper里面包含slf4j，与外界已经导入的slf4j发生版本冲突，故排除掉它--&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.slf4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>slf4j-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.slf4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>slf4j-log4j12<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> 后端开发 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>小野解词 词根词缀</title>
       <link href="2021/01/07/%E5%B0%8F%E9%87%8E%E8%A7%A3%E8%AF%8D-%E8%AF%8D%E6%A0%B9%E8%AF%8D%E7%BC%80/"/>
       <url>2021/01/07/%E5%B0%8F%E9%87%8E%E8%A7%A3%E8%AF%8D-%E8%AF%8D%E6%A0%B9%E8%AF%8D%E7%BC%80/</url>
